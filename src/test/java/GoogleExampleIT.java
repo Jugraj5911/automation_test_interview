@@ -31,6 +31,7 @@ public class GoogleExampleIT {
 		searchBar.sendKeys("Milk!");
 		searchBar.sendKeys(Keys.ENTER);
 		LOGGER.info("Page title is: {}", driver.getTitle());
+		LOGGER.info("Page title is: {}"+ driver.getTitle());
 		Assert.assertTrue(driver.getTitle().equals("Google"));
 	}
 
@@ -38,6 +39,7 @@ public class GoogleExampleIT {
 	public void setUp() {
 		
 		driver = new new FirefoxDriver();
+		driver = new FirefoxDriver();
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 60), this);
 		driver.get("http://www.google.com");
 	}
